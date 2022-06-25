@@ -12,14 +12,17 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.presets.WorldPreset;
 
+import java.util.Collections;
+
+// todo 1.19 this whole class is probably a json now
 public class WorldTypeSkyblock extends WorldPreset {
 	public static final WorldTypeSkyblock INSTANCE = new WorldTypeSkyblock();
 
 	private WorldTypeSkyblock() {
-		super("botania-skyblock");
+		super(Collections.emptyMap());
 	}
 
-	@Override
+	// @Override
 	protected ChunkGenerator generator(RegistryAccess registryAccess, long seed) {
 		return SkyblockChunkGenerator.createForWorldType(registryAccess, seed);
 	}

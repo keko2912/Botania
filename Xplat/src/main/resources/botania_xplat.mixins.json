@@ -58,7 +58,6 @@
     "client.AccessorRecipeBookPage",
     "client.AccessorRenderBuffers",
     "client.AccessorRenderType",
-    "client.AccessorWorldPreset",
     "client.MixinClientLevelData",
     "client.MixinItemInHandRenderer",
     "client.MixinLevelRenderer",

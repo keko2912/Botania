@@ -13,6 +13,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 import static vazkii.botania.common.lib.ResourceLocationHelper.prefix;
@@ -223,6 +224,21 @@ public class ModTags {
 
 		private static TagKey<EntityType<?>> tag(String name) {
 			return TagKey.create(Registry.ENTITY_TYPE_REGISTRY, prefix(name));
+		}
+	}
+
+	public static class Biomes {
+		// todo 1.19 generate these
+		public static final TagKey<Biome> MARIMORPHOSIS_DESERT_BONUS = tag("marimorphosis_desert_bonus");
+		public static final TagKey<Biome> MARIMORPHOSIS_FOREST_BONUS = tag("marimorphosis_forest_bonus");
+		public static final TagKey<Biome> MARIMORPHOSIS_FUNGAL_BONUS = tag("marimorphosis_fungal_bonus");
+		public static final TagKey<Biome> MARIMORPHOSIS_MESA_BONUS = tag("marimorphosis_mesa_bonus");
+		public static final TagKey<Biome> MARIMORPHOSIS_MOUNTAIN_BONUS = tag("marimorphosis_mountain_bonus");
+		public static final TagKey<Biome> MARIMORPHOSIS_PLAINS_BONUS = tag("marimorphosis_plains_bonus");
+		public static final TagKey<Biome> MARIMORPHOSIS_SWAMP_BONUS = tag("marimorphosis_swamp_bonus");
+		public static final TagKey<Biome> MARIMORPHOSIS_TAIGA_BONUS = tag("marimorphosis_taiga_bonus");
+		private static TagKey<Biome> tag(String name) {
+			return TagKey.create(Registry.BIOME_REGISTRY, prefix(name));
 		}
 	}
 }

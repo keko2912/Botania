@@ -32,12 +32,14 @@ public class ModFeatures {
 	public static Holder<PlacedFeature> mysticalFlowersPlaced = null;
 	public static Holder<PlacedFeature> mysticalMushroomsPlaced = null;
 
+	/* todo 1.19 tags
 	public static final Set<Biome.BiomeCategory> TYPE_BLACKLIST = ImmutableSet.of(
 			Biome.BiomeCategory.NETHER,
 			Biome.BiomeCategory.THEEND,
 			Biome.BiomeCategory.ICY,
 			Biome.BiomeCategory.MUSHROOM
 	);
+	 */
 
 	public static void registerFeatures(BiConsumer<Feature<?>, ResourceLocation> r) {
 		var flowersId = MYSTICAL_FLOWERS_ID.location();

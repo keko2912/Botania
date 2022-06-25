@@ -459,8 +459,6 @@ public final class ModItems {
 		r.accept(TerraPickTippingRecipe.SERIALIZER, prefix("terra_pick_tipping"));
 		r.accept(TwigWandRecipe.SERIALIZER, prefix("twig_wand"));
 		r.accept(WaterBottleMatchingRecipe.SERIALIZER, prefix("water_bottle_matching_shaped"));
-
-		ModPatterns.init();
 	}
 
 	public static Item getPetal(DyeColor color) {

@@ -16,8 +16,9 @@ import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.HashCache;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.level.biome.Biome.BiomeCategory;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
@@ -26,6 +27,7 @@ import vazkii.botania.api.recipe.StateIngredient;
 import vazkii.botania.common.block.ModFluffBlocks;
 import vazkii.botania.common.crafting.ModRecipeTypes;
 import vazkii.botania.common.crafting.StateIngredientHelper;
+import vazkii.botania.common.lib.ModTags;
 
 import javax.annotation.Nullable;
 
@@ -65,14 +67,14 @@ public class OrechidProvider extends BotaniaRecipeProvider {
 		consumer.accept(netherrack(Blocks.NETHER_GOLD_ORE, 3635));
 		consumer.accept(netherrack(Blocks.ANCIENT_DEBRIS, 148));
 
-		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneForest, BiomeCategory.FOREST));
-		consumer.accept(biomeStone(ModFluffBlocks.biomeStonePlains, BiomeCategory.PLAINS));
-		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneMountain, BiomeCategory.EXTREME_HILLS));
-		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneFungal, BiomeCategory.MUSHROOM));
-		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneSwamp, BiomeCategory.SWAMP));
-		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneDesert, BiomeCategory.DESERT, BiomeCategory.BEACH));
-		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneTaiga, BiomeCategory.ICY, BiomeCategory.TAIGA));
-		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneMesa, BiomeCategory.MESA));
+		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneForest, ModTags.Biomes.MARIMORPHOSIS_FOREST_BONUS));
+		consumer.accept(biomeStone(ModFluffBlocks.biomeStonePlains, ModTags.Biomes.MARIMORPHOSIS_PLAINS_BONUS));
+		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneMountain, ModTags.Biomes.MARIMORPHOSIS_MOUNTAIN_BONUS));
+		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneFungal, ModTags.Biomes.MARIMORPHOSIS_FUNGAL_BONUS));
+		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneSwamp, ModTags.Biomes.MARIMORPHOSIS_SWAMP_BONUS));
+		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneDesert, ModTags.Biomes.MARIMORPHOSIS_DESERT_BONUS));
+		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneTaiga, ModTags.Biomes.MARIMORPHOSIS_TAIGA_BONUS));
+		consumer.accept(biomeStone(ModFluffBlocks.biomeStoneMesa, ModTags.Biomes.MARIMORPHOSIS_MESA_BONUS));
 	}
 
 	protected ResourceLocation orechidId(Block b) {
@@ -99,8 +101,8 @@ public class OrechidProvider extends BotaniaRecipeProvider {
 		return new Result(ModRecipeTypes.ORECHID_IGNEM_SERIALIZER, ignemId(output), Blocks.NETHERRACK, forBlock(output), weight);
 	}
 
-	protected Result biomeStone(Block output, BiomeCategory... biomes) {
-		return new BiomeResult(ModRecipeTypes.MARIMORPHOSIS_SERIALIZER, marimorphosisId(output), Blocks.STONE, forBlock(output), 1, 11, biomes);
+	protected Result biomeStone(Block output, TagKey<Biome> biome) {
+		return new BiomeResult(ModRecipeTypes.MARIMORPHOSIS_SERIALIZER, marimorphosisId(output), Blocks.STONE, forBlock(output), 1, 11, biome);
 	}
 
 	protected static StateIngredient forBlock(Block block) {
@@ -159,23 +161,19 @@ public class OrechidProvider extends BotaniaRecipeProvider {
 
 	protected static class BiomeResult extends Result {
 		private final int bonusWeight;
-		private final BiomeCategory[] categories;
+		private final TagKey<Biome> biome;
 
 		public BiomeResult(RecipeSerializer<? extends IOrechidRecipe> type, ResourceLocation id, Block input,
-				StateIngredient output, int weight, int bonusWeight, BiomeCategory... categories) {
+				StateIngredient output, int weight, int bonusWeight, TagKey<Biome> biome) {
 			super(type, id, input, output, weight);
 			this.bonusWeight = bonusWeight;
-			this.categories = categories;
+			this.biome = biome;
 		}
 
 		@Override
 		public void serializeRecipeData(JsonObject json) {
 			super.serializeRecipeData(json);
-			var biomes = new JsonArray();
-			for (BiomeCategory category : categories) {
-				biomes.add(category.getSerializedName());
-			}
-			json.add("biomes", biomes);
+			json.addProperty("biome_bonus_tag", biome.location().toString());
 			json.addProperty("biome_bonus", bonusWeight);
 		}
 	}

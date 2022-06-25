@@ -58,7 +58,6 @@ import vazkii.botania.common.lib.LibMisc;
 import vazkii.botania.common.world.WorldTypeSkyblock;
 import vazkii.botania.fabric.network.FabricPacketHandler;
 import vazkii.botania.mixin.client.AccessorRenderBuffers;
-import vazkii.botania.mixin.client.AccessorWorldPreset;
 import vazkii.botania.xplat.IXplatAbstractions;
 import vazkii.patchouli.api.BookDrawScreenCallback;
 

@@ -149,6 +149,7 @@ public class FabricCommonInitializer implements ModInitializer {
 		// GUI and Recipe
 		ModItems.registerMenuTypes(bind(Registry.MENU));
 		ModItems.registerRecipeSerializers(bind(Registry.RECIPE_SERIALIZER));
+		ModPatterns.submitRegistrations(bind(Registry.BANNER_PATTERN));
 		ModRecipeTypes.registerRecipeTypes(bind(Registry.RECIPE_SERIALIZER));
 
 		// Entities
@@ -165,13 +166,16 @@ public class FabricCommonInitializer implements ModInitializer {
 		ModFeatures.registerFeatures(bind(Registry.FEATURE));
 		if (BotaniaConfig.common().worldgenEnabled()) {
 			BiomeModifications.addFeature(ctx -> {
+				return true;
+				/* todo 1.19 use a tag
 				var category = Biome.getBiomeCategory(ctx.getBiomeRegistryEntry());
 				return !ModFeatures.TYPE_BLACKLIST.contains(category);
+				 */
 			},
 					GenerationStep.Decoration.VEGETAL_DECORATION,
 					ModFeatures.MYSTICAL_FLOWERS_ID);
 			BiomeModifications.addFeature(
-					ctx -> Biome.getBiomeCategory(ctx.getBiomeRegistryEntry()) != Biome.BiomeCategory.THEEND,
+					ctx -> true, // todo 1.19 use a tag Biome.getBiomeCategory(ctx.getBiomeRegistryEntry()) != Biome.BiomeCategory.THEEND,
 					GenerationStep.Decoration.VEGETAL_DECORATION,
 					ModFeatures.MYSTICAL_MUSHROOMS_ID);
 		}
