@@ -71,7 +71,7 @@ public class TileBellows extends TileMod {
 			}
 
 			if (tile instanceof AbstractFurnaceBlockEntity furnace) {
-				if (canSmelt(furnace)) {
+				if (ExoflameFurnaceHandler.canSmelt(furnace)) {
 					AccessorAbstractFurnaceBlockEntity mFurnace = (AccessorAbstractFurnaceBlockEntity) furnace;
 					mFurnace.setCookingProgress(Math.min(mFurnace.getCookingTotalTime() - 1, mFurnace.getCookingProgress() + 20));
 					mFurnace.setLitTime(Math.max(0, mFurnace.getLitTime() - 10));
@@ -140,12 +140,6 @@ public class TileBellows extends TileMod {
 				VanillaPacketDispatcher.dispatchTEToNearbyPlayers(this);
 			}
 		}
-	}
-
-	public static boolean canSmelt(AbstractFurnaceBlockEntity furnace) {
-		RecipeType<? extends AbstractCookingRecipe> rt = ExoflameFurnaceHandler.getRecipeType(furnace);
-		AbstractCookingRecipe recipe = furnace.getLevel().getRecipeManager().getRecipeFor(rt, furnace, furnace.getLevel()).orElse(null);
-		return recipe != null && ExoflameFurnaceHandler.canSmelt(furnace, recipe);
 	}
 
 }
