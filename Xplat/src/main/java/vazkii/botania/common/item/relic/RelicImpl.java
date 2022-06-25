@@ -1,7 +1,7 @@
 package vazkii.botania.common.item.relic;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
@@ -87,13 +87,13 @@ public class RelicImpl implements IRelic {
 			return;
 		}
 		if (relic.getSoulbindUUID() == null) {
-			tooltip.add(new TranslatableComponent("botaniamisc.relicUnbound"));
+			tooltip.add(Component.translatable("botaniamisc.relicUnbound"));
 		} else {
 			var player = ClientProxy.INSTANCE.getClientPlayer();
 			if (player == null || !relic.isRightPlayer(player)) {
-				tooltip.add(new TranslatableComponent("botaniamisc.notYourSagittarius"));
+				tooltip.add(Component.translatable("botaniamisc.notYourSagittarius"));
 			} else {
-				tooltip.add(new TranslatableComponent("botaniamisc.relicSoulbound", player.getName()));
+				tooltip.add(Component.translatable("botaniamisc.relicSoulbound", player.getName()));
 			}
 		}
 	}

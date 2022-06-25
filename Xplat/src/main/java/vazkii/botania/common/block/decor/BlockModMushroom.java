@@ -12,6 +12,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -42,7 +43,7 @@ public class BlockModMushroom extends MushroomBlock implements ICustomApothecary
 	}
 
 	@Override
-	public boolean growMushroom(ServerLevel level, BlockPos pos, BlockState state, Random rand) {
+	public boolean growMushroom(ServerLevel level, BlockPos pos, BlockState state, RandomSource rand) {
 		return false;
 	}
 
@@ -65,7 +66,7 @@ public class BlockModMushroom extends MushroomBlock implements ICustomApothecary
 	}
 
 	@Override
-	public void animateTick(BlockState state, Level world, BlockPos pos, Random rand) {
+	public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource rand) {
 		int hex = ColorHelper.getColorValue(color);
 		int r = (hex & 0xFF0000) >> 16;
 		int g = (hex & 0xFF00) >> 8;

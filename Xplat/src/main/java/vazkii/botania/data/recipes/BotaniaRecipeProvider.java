@@ -11,6 +11,7 @@ package vazkii.botania.data.recipes;
 import com.google.common.collect.Sets;
 import com.google.gson.JsonObject;
 
+import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.HashCache;
@@ -33,7 +34,7 @@ public abstract class BotaniaRecipeProvider implements DataProvider {
 
 	// [VanillaCopy] RecipeProvider
 	@Override
-	public void run(HashCache cache) {
+	public void run(CachedOutput cache) {
 		Path path = this.generator.getOutputFolder();
 		Set<ResourceLocation> set = Sets.newHashSet();
 		registerRecipes((recipeJsonProvider) -> {

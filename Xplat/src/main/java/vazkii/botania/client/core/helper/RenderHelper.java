@@ -31,6 +31,7 @@ import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -396,16 +397,16 @@ public final class RenderHelper extends RenderType {
 
 	// [VanillaCopy] ItemRenderer with custom color
 	private static void renderBakedItemModel(BakedModel model, ItemStack stack, int color, int light, int overlay, PoseStack ms, VertexConsumer buffer) {
-		Random random = new Random();
+		var random = RandomSource.create();
 		long i = 42L;
 
 		for (Direction direction : Direction.values()) {
 			random.setSeed(42L);
-			renderBakedItemQuads(ms, buffer, color, model.getQuads((BlockState) null, direction, random), stack, light, overlay);
+			renderBakedItemQuads(ms, buffer, color, model.getQuads(null, direction, random), stack, light, overlay);
 		}
 
 		random.setSeed(42L);
-		renderBakedItemQuads(ms, buffer, color, model.getQuads((BlockState) null, (Direction) null, random), stack, light, overlay);
+		renderBakedItemQuads(ms, buffer, color, model.getQuads(null, null, random), stack, light, overlay);
 	}
 
 	// Wraps ItemRenderer#renderQuadList for custom color support

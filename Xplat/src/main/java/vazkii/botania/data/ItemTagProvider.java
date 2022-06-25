@@ -207,10 +207,4 @@ public class ItemTagProvider extends ItemTagsProvider {
 		);
 		this.tag(ItemTags.FREEZE_IMMUNE_WEARABLES).add(icePendant);
 	}
-
-	@Nonnull
-	@Override
-	public String getName() {
-		return "Botania item tags";
-	}
 }

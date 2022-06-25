@@ -17,6 +17,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.BlockRenderDispatcher;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -61,7 +62,7 @@ public class RenderTileFloatingFlower implements BlockEntityRenderer<TileFloatin
 
 		var buffer = buffers.getBuffer(ItemBlockRenderTypes.getRenderType(state, false));
 		brd.getModelRenderer().tesselateBlock(tile.getLevel(), brd.getBlockModel(state), state, tile.getBlockPos(), ms,
-				buffer, true, new Random(), state.getSeed(tile.getBlockPos()), overlay);
+				buffer, true, RandomSource.create(), state.getSeed(tile.getBlockPos()), overlay);
 
 		ms.popPose();
 	}

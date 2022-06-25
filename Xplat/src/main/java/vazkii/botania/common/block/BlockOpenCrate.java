@@ -11,6 +11,7 @@ package vazkii.botania.common.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.EntityBlock;
@@ -46,13 +47,13 @@ public class BlockOpenCrate extends BlockMod implements EntityBlock {
 	}
 
 	@Override
-	public void animateTick(BlockState state, Level world, BlockPos pos, Random rand) {
+	public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource rand) {
 		if (world.hasNeighborSignal(pos) && rand.nextDouble() < 0.2) {
 			redstoneParticlesOnFullBlock(world, pos, rand);
 		}
 	}
 
-	public static void redstoneParticlesOnFullBlock(Level world, BlockPos pos, Random random) {
+	public static void redstoneParticlesOnFullBlock(Level world, BlockPos pos, RandomSource random) {
 		for (Direction direction : Direction.values()) {
 			BlockPos blockpos = pos.relative(direction);
 			if (!world.getBlockState(blockpos).isSolidRender(world, blockpos)) {

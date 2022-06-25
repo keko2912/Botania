@@ -12,6 +12,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import net.minecraft.core.Registry;
+import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.HashCache;
 import net.minecraft.resources.ResourceLocation;
@@ -36,11 +37,6 @@ public class OrechidProvider extends BotaniaRecipeProvider {
 
 	public OrechidProvider(DataGenerator generator) {
 		super(generator);
-	}
-
-	@Override
-	public void run(HashCache hashCache) {
-		super.run(hashCache);
 	}
 
 	// TODO: We had an enormous amount of ores defined for mod compat.

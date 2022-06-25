@@ -8,9 +8,9 @@
  */
 package vazkii.botania.common.world;
 
-import net.minecraft.client.gui.screens.worldselection.WorldPreset;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.world.level.chunk.ChunkGenerator;
+import net.minecraft.world.level.levelgen.presets.WorldPreset;
 
 public class WorldTypeSkyblock extends WorldPreset {
 	public static final WorldTypeSkyblock INSTANCE = new WorldTypeSkyblock();

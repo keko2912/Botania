@@ -12,7 +12,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -48,7 +48,7 @@ public class ItemLexicon extends ItemModPattern {
 
 	@Override
 	public void fillItemCategory(@Nonnull CreativeModeTab tab, @Nonnull NonNullList<ItemStack> list) {
-		if (allowdedIn(tab)) {
+		if (allowedIn(tab)) {
 			list.add(new ItemStack(this));
 			ItemStack creative = new ItemStack(this);
 			creative.getOrCreateTag().putBoolean(TAG_ELVEN_UNLOCK, true);
@@ -79,7 +79,7 @@ public class ItemLexicon extends ItemModPattern {
 		try {
 			return PatchouliAPI.get().getSubtitle(Registry.ITEM.getKey(ModItems.lexicon));
 		} catch (IllegalArgumentException e) {
-			return new TextComponent(""); // TODO Adjust Patchouli because first search tree creation is too early to get the edition
+			return Component.literal(""); // TODO Adjust Patchouli because first search tree creation is too early to get the edition
 		}
 	}
 

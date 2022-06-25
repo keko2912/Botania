@@ -10,6 +10,7 @@ package vazkii.botania.common.block.mana;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -72,13 +73,13 @@ public class BlockPrism extends BlockModWaterloggable implements EntityBlock, IM
 	}
 
 	@Override
-	public void animateTick(BlockState state, Level world, BlockPos pos, Random rand) {
+	public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource rand) {
 		if (state.getValue(BlockStateProperties.POWERED)) {
 			redstoneParticlesInShape(state, world, pos, rand);
 		}
 	}
 
-	public static void redstoneParticlesInShape(BlockState state, Level world, BlockPos pos, Random rand) {
+	public static void redstoneParticlesInShape(BlockState state, Level world, BlockPos pos, RandomSource rand) {
 		if (rand.nextBoolean()) {
 			AABB localBox = state.getShape(world, pos).bounds();
 			double x = pos.getX() + localBox.minX + rand.nextDouble() * (localBox.maxX - localBox.minX);

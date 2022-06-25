@@ -10,6 +10,7 @@ package vazkii.botania.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -82,11 +83,11 @@ public class BlockSpecialFlower extends FlowerBlock implements EntityBlock {
 	}
 
 	@Override
-	public void animateTick(BlockState state, Level world, BlockPos pos, Random rand) {
+	public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource rand) {
 		redstoneParticlesIfPowered(state, world, pos, rand);
 	}
 
-	public static void redstoneParticlesIfPowered(BlockState state, Level world, BlockPos pos, Random rand) {
+	public static void redstoneParticlesIfPowered(BlockState state, Level world, BlockPos pos, RandomSource rand) {
 		BlockEntity te = world.getBlockEntity(pos);
 		if (te instanceof TileEntityFunctionalFlower flower && rand.nextBoolean()) {
 			if (flower.acceptsRedstone() && flower.redstoneSignal > 0) {

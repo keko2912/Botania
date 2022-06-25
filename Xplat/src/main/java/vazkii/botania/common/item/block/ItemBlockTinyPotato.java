@@ -11,7 +11,7 @@ package vazkii.botania.common.item.block;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
@@ -76,7 +76,7 @@ public class ItemBlockTinyPotato extends BlockItem /*implements LoomPatternProvi
 				&& TYPOS.matcher(stack.getHoverName().getString()).matches()) {
 			int ticks = ItemNBTHelper.getInt(stack, TAG_TICKS, 0);
 			if (ticks < NOT_MY_NAME.length) {
-				player.sendMessage(new TextComponent(NOT_MY_NAME[ticks]).withStyle(ChatFormatting.RED), Util.NIL_UUID);
+				player.sendSystemMessage(Component.literal(NOT_MY_NAME[ticks]).withStyle(ChatFormatting.RED));
 				ItemNBTHelper.setInt(stack, TAG_TICKS, ticks + 1);
 			}
 		}

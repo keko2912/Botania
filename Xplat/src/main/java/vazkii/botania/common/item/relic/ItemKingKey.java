@@ -79,7 +79,7 @@ public class ItemKingKey extends ItemRelic {
 
 			Vec3 pl = look.add(VecHelper.fromEntityCenter(living)).add(0, 1.6, div * 0.1);
 
-			Random rand = world.random;
+			var rand = world.random;
 			Vec3 axis = look.normalize().cross(new Vec3(-1, 0, -1)).normalize();
 
 			double rot = mod * Math.PI / 4 - Math.PI / 2;

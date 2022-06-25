@@ -16,13 +16,14 @@ import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Nameable;
 import net.minecraft.world.SimpleContainer;
@@ -64,7 +65,7 @@ public class TileTinyPotato extends TileExposedSimpleInventory implements Nameab
 	private static final int JUMP_EVENT = 0;
 
 	public int jumpTicks = 0;
-	public Component name = new TextComponent("");
+	public Component name = Component.literal("");
 	private int nextDoIt = 0;
 	private int birthdayTick = 0;
 
@@ -101,7 +102,7 @@ public class TileTinyPotato extends TileExposedSimpleInventory implements Nameab
 			for (int i = 0; i < inventorySize(); i++) {
 				var son = getItemHandler().getItem(i);
 				if (!son.isEmpty() && son.is(ModBlocks.tinyPotato.asItem())) {
-					player.sendMessage(new TextComponent("Don't talk to me or my son ever again."), Util.NIL_UUID);
+					player.sendSystemMessage(Component.literal("Don't talk to me or my son ever again."));
 					return;
 				}
 			}
@@ -164,13 +165,13 @@ public class TileTinyPotato extends TileExposedSimpleInventory implements Nameab
 				var messageIndex = messageTimes.indexOf(birthdayTick);
 				if (messageIndex != -1) {
 					Object[] args = messageIndex == 1 ? new Object[] { getTinyPotatoAge() } : ObjectArrays.EMPTY_ARRAY;
-					var message = new TextComponent("<")
+					var message = Component.literal("<")
 							.append(getDisplayName())
 							.append("> ")
-							.append(new TranslatableComponent("botania.tater_birthday." + messageIndex, args));
+							.append(Component.translatable("botania.tater_birthday." + messageIndex, args));
 
 					for (var player : players) {
-						player.sendMessage(message, Util.NIL_UUID);
+						player.sendSystemMessage(message);
 					}
 					jump();
 					BlockTinyPotato.spawnHearts((ServerLevel) level, getBlockPos());
@@ -265,7 +266,7 @@ public class TileTinyPotato extends TileExposedSimpleInventory implements Nameab
 	);
 
 	@Nullable
-	private static DyeColor getLitCakeColor(BlockState state, Random rand) {
+	private static DyeColor getLitCakeColor(BlockState state, RandomSource rand) {
 		var idx = ALL_CANDLE_CAKES.indexOf(state.getBlock());
 		if (idx == -1) {
 			return null;

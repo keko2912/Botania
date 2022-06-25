@@ -115,7 +115,7 @@ public class TileIncensePlate extends TileExposedSimpleInventory implements Worl
 	}
 
 	public void spawnSmokeParticles() {
-		Random random = level.getRandom();
+		var random = level.getRandom();
 		for (int i = 0; i < 4; ++i) {
 			level.addParticle(ParticleTypes.SMOKE,
 					worldPosition.getX() + 0.5 + random.nextDouble() / 2.0 * (random.nextBoolean() ? 1 : -1),

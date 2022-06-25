@@ -27,7 +27,7 @@ public class MysticalMushroomFeature extends Feature<MysticalMushroomConfig> {
 	@Override
 	public boolean place(FeaturePlaceContext<MysticalMushroomConfig> ctx) {
 		WorldGenLevel level = ctx.level();
-		Random rand = ctx.random();
+		var rand = ctx.random();
 		BlockPos pos = ctx.origin();
 		MysticalMushroomConfig config = ctx.config();
 		boolean any = false;
