@@ -25,6 +25,7 @@ public class FabricMixinServerGamePacketListenerImpl {
 	@Shadow
 	public ServerPlayer player;
 
+	/* todo 1.19
 	@Inject(
 		at = @At(value = "INVOKE", target = "Lnet/minecraft/server/players/PlayerList;broadcastMessage(Lnet/minecraft/network/chat/Component;Ljava/util/function/Function;Lnet/minecraft/network/chat/ChatType;Ljava/util/UUID;)V"),
 		method = "handleChat(Lnet/minecraft/server/network/TextFilter$FilteredText;)V", cancellable = true
@@ -34,4 +35,5 @@ public class FabricMixinServerGamePacketListenerImpl {
 			ci.cancel();
 		}
 	}
+	*/
 }
