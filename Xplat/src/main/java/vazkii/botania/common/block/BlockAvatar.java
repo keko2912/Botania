@@ -43,8 +43,6 @@ import vazkii.botania.xplat.IXplatAbstractions;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import java.util.Random;
-
 public class BlockAvatar extends BlockModWaterloggable implements EntityBlock {
 
 	private static final VoxelShape X_AABB = box(5, 0, 3.5, 11, 17, 12.5);

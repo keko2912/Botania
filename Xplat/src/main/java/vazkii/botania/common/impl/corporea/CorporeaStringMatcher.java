@@ -10,7 +10,6 @@ package vazkii.botania.common.impl.corporea;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
 import org.apache.commons.lang3.text.WordUtils;

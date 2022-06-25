@@ -25,8 +25,6 @@ import vazkii.botania.common.block.tile.mana.TileTurntable;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import java.util.Random;
-
 public class BlockTurntable extends BlockMod implements EntityBlock {
 
 	public BlockTurntable(Properties builder) {

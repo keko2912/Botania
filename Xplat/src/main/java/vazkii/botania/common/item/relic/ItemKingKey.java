@@ -28,8 +28,6 @@ import vazkii.botania.common.helper.VecHelper;
 
 import javax.annotation.Nonnull;
 
-import java.util.Random;
-
 import static vazkii.botania.common.lib.ResourceLocationHelper.prefix;
 
 public class ItemKingKey extends ItemRelic {

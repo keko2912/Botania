@@ -21,8 +21,6 @@ import vazkii.botania.mixin.AccessorFireBlock;
 
 import javax.annotation.Nonnull;
 
-import java.util.Random;
-
 public class BlockSolidVines extends VineBlock {
 
 	public BlockSolidVines(Properties builder) {

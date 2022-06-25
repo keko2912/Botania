@@ -27,8 +27,6 @@ import vazkii.botania.common.block.tile.TileSimpleInventory;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import java.util.Random;
-
 public class BlockOpenCrate extends BlockMod implements EntityBlock {
 
 	protected BlockOpenCrate(Properties builder) {

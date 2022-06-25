@@ -41,8 +41,6 @@ import vazkii.botania.common.entity.EntityManaBurst;
 
 import javax.annotation.Nonnull;
 
-import java.util.Random;
-
 public class BlockPrism extends BlockModWaterloggable implements EntityBlock, IManaCollisionGhost {
 	private static final VoxelShape SHAPE = box(4, 0, 4, 12, 16, 12);
 

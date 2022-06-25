@@ -30,8 +30,6 @@ import vazkii.botania.xplat.BotaniaConfig;
 
 import javax.annotation.Nonnull;
 
-import java.util.Random;
-
 public class BlockModMushroom extends MushroomBlock implements ICustomApothecaryColor {
 
 	private static final VoxelShape SHAPE = box(4.8, 0, 4.8, 12.8, 16, 12.8);

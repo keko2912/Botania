@@ -21,8 +21,6 @@ import vazkii.botania.client.fx.SparkleParticleData;
 import vazkii.botania.common.annotations.SoftImplement;
 import vazkii.botania.common.block.decor.BlockModGlass;
 
-import java.util.Random;
-
 public class BlockBifrostPerm extends BlockModGlass implements BeaconBeamBlock {
 	public BlockBifrostPerm(Properties builder) {
 		super(builder);

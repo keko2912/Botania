@@ -24,8 +24,6 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import vazkii.botania.client.fx.SparkleParticleData;
 
-import java.util.Random;
-
 public class BlockAltGrass extends BlockMod {
 
 	public enum Variant {

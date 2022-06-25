@@ -41,8 +41,6 @@ import vazkii.botania.common.item.ModItems;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import java.util.Random;
-
 public class BlockLightRelay extends BlockModWaterloggable implements EntityBlock {
 
 	private static final VoxelShape SHAPE = box(5, 5, 5, 11, 11, 11);

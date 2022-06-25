@@ -40,8 +40,6 @@ import vazkii.botania.xplat.IXplatAbstractions;
 
 import javax.annotation.Nonnull;
 
-import java.util.Random;
-
 public class BlockFloatingFlower extends BlockModWaterloggable implements EntityBlock {
 
 	private static final VoxelShape SHAPE = box(1.6, 1.6, 1.6, 14.4, 14.4, 14.4);

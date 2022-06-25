@@ -17,8 +17,6 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
 import vazkii.botania.common.block.ModBlocks;
 
-import java.util.Random;
-
 public class MysticalMushroomFeature extends Feature<MysticalMushroomConfig> {
 	public MysticalMushroomFeature() {
 		super(MysticalMushroomConfig.CODEC);

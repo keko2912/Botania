@@ -41,7 +41,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
@@ -172,7 +171,7 @@ public class FabricCommonInitializer implements ModInitializer {
 				/* todo 1.19 use a tag
 				var category = Biome.getBiomeCategory(ctx.getBiomeRegistryEntry());
 				return !ModFeatures.TYPE_BLACKLIST.contains(category);
-				 */
+				*/
 			},
 					GenerationStep.Decoration.VEGETAL_DECORATION,
 					ModFeatures.MYSTICAL_FLOWERS_ID);

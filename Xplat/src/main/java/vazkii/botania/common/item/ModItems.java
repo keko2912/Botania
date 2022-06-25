@@ -28,7 +28,6 @@ import vazkii.botania.api.state.enums.CratePattern;
 import vazkii.botania.client.gui.bag.ContainerFlowerBag;
 import vazkii.botania.client.gui.box.ContainerBaubleBox;
 import vazkii.botania.common.block.ModBlocks;
-import vazkii.botania.common.block.ModPatterns;
 import vazkii.botania.common.crafting.recipe.*;
 import vazkii.botania.common.handler.ModSounds;
 import vazkii.botania.common.item.brew.ItemBrewBase;

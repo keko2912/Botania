@@ -122,7 +122,8 @@ public class SkyblockChunkGenerator extends ChunkGenerator {
 		DensityFunction.SinglePointContext ctx = new DensityFunction.SinglePointContext(pos.getX(), pos.getY(), pos.getZ());
 		double $$6 = router.ridges().compute(ctx);
 		String var10001 = format.format(router.temperature().compute(ctx));
-		strings.add("NoiseRouter T: " + var10001 + " V: " + format.format(router.vegetation().compute(ctx)) + " C: " + format.format(router.continents().compute(ctx)) + " E: " + format.format(router.erosion().compute(ctx)) + " D: " + format.format(router.depth().compute(ctx)) + " W: " + format.format($$6) + " PV: " + format.format(NoiseRouterData.peaksAndValleys((float)$$6)) + " AS: " + format.format(router.initialDensityWithoutJaggedness().compute(ctx)) + " N: " + format.format(router.finalDensity().compute(ctx)));
+		strings.add("NoiseRouter T: " + var10001 + " V: " + format.format(router.vegetation().compute(ctx)) + " C: " + format.format(router.continents().compute(ctx)) + " E: " + format.format(router.erosion().compute(ctx)) + " D: " + format.format(router.depth().compute(ctx)) + " W: " + format.format($$6) + " PV: " + format.format(NoiseRouterData.peaksAndValleys((float) $$6)) + " AS: " + format.format(router.initialDensityWithoutJaggedness().compute(ctx)) + " N: "
+				+ format.format(router.finalDensity().compute(ctx)));
 	}
 
 	@Override

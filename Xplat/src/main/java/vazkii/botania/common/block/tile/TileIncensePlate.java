@@ -36,7 +36,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import java.util.List;
-import java.util.Random;
 
 public class TileIncensePlate extends TileExposedSimpleInventory implements WorldlyContainer {
 	private static final String TAG_TIME_LEFT = "timeLeft";

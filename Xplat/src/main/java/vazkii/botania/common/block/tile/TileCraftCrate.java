@@ -146,7 +146,8 @@ public class TileCraftCrate extends TileOpenCrate implements IWandable {
 
 		CraftingContainer craft = new CraftingContainer(new AbstractContainerMenu(MenuType.CRAFTING, -1) {
 			@Nonnull
-			@Override public ItemStack quickMoveStack(@Nonnull Player player, int i) {
+			@Override
+			public ItemStack quickMoveStack(@Nonnull Player player, int i) {
 				return ItemStack.EMPTY;
 			}
 

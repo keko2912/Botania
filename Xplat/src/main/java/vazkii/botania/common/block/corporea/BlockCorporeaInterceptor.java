@@ -26,8 +26,6 @@ import vazkii.botania.common.block.tile.corporea.TileCorporeaInterceptor;
 
 import javax.annotation.Nonnull;
 
-import java.util.Random;
-
 public class BlockCorporeaInterceptor extends BlockMod implements EntityBlock {
 
 	public BlockCorporeaInterceptor(BlockBehaviour.Properties builder) {

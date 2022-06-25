@@ -24,8 +24,6 @@ import vazkii.botania.common.item.lens.ItemLens;
 import vazkii.botania.common.lib.LibMisc;
 import vazkii.botania.common.lib.ModTags;
 
-import javax.annotation.Nonnull;
-
 import java.util.Comparator;
 
 import static vazkii.botania.common.item.ModItems.*;

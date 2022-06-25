@@ -8,8 +8,6 @@
  */
 package vazkii.botania.common.crafting;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 
@@ -65,7 +63,7 @@ public class RecipeMarimorphosis extends RecipeOrechid {
 			RecipeOrechid base = ModRecipeTypes.ORECHID_SERIALIZER.fromJson(recipeId, json);
 
 			var biomes = TagKey.create(Registry.BIOME_REGISTRY,
-				new ResourceLocation(GsonHelper.getAsString(json, "biome_bonus_tag")));
+					new ResourceLocation(GsonHelper.getAsString(json, "biome_bonus_tag")));
 			int weightBonus = GsonHelper.getAsInt(json, "biome_bonus", 0);
 			if (base.getWeight() + weightBonus <= 0) {
 				throw new JsonSyntaxException("Weight combined with bonus cannot be 0 or less");

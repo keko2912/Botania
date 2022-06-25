@@ -10,6 +10,7 @@ package vazkii.botania.common.block;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BannerPattern;
+
 import vazkii.botania.common.lib.LibMisc;
 
 import java.util.ArrayList;
@@ -27,14 +28,14 @@ public final class ModPatterns {
 	public static final BannerPattern SPARK_DOMINANT = make(LibMisc.MOD_ID + ":spark_dominant");
 	public static final BannerPattern SPARK_RECESSIVE = make(LibMisc.MOD_ID + ":spark_recessive");
 	public static final BannerPattern SPARK_ISOLATED = make(LibMisc.MOD_ID + ":spark_isolated");
-	
+
 	public static final BannerPattern FISH = make(LibMisc.MOD_ID + ":fish");
 	public static final BannerPattern AXE = make(LibMisc.MOD_ID + ":axe");
 	public static final BannerPattern HOE = make(LibMisc.MOD_ID + ":hoe");
 	public static final BannerPattern PICKAXE = make(LibMisc.MOD_ID + ":pickaxe");
 	public static final BannerPattern SHOVEL = make(LibMisc.MOD_ID + ":shovel");
 	public static final BannerPattern SWORD = make(LibMisc.MOD_ID + ":sword");
-	
+
 	private static BannerPattern make(String hashName) {
 		var pattern = new BannerPattern(hashName);
 		ALL.add(pattern);

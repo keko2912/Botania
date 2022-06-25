@@ -29,8 +29,6 @@ import vazkii.botania.xplat.BotaniaConfig;
 
 import javax.annotation.Nonnull;
 
-import java.util.Random;
-
 public class BlockModFlower extends FlowerBlock implements BonemealableBlock {
 	public final DyeColor color;
 

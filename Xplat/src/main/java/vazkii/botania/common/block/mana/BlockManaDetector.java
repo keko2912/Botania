@@ -25,8 +25,6 @@ import vazkii.botania.api.mana.IManaTrigger;
 import vazkii.botania.client.fx.SparkleParticleData;
 import vazkii.botania.common.block.BlockMod;
 
-import java.util.Random;
-
 public class BlockManaDetector extends BlockMod implements IManaCollisionGhost {
 
 	public BlockManaDetector(Properties builder) {

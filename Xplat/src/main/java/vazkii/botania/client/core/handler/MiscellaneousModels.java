@@ -8,7 +8,6 @@
  */
 package vazkii.botania.client.core.handler;
 
-import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.client.resources.model.ModelBakery;
@@ -17,7 +16,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.level.block.entity.BannerPattern;
 
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.BotaniaAPIClient;
@@ -112,7 +110,7 @@ public class MiscellaneousModels {
 				materials.add(new Material(Sheets.BANNER_SHEET, pattern.location(true)));
 			}
 		}
-		 */
+		*/
 		consumer.accept(prefix("icon/goldfish"));
 		consumer.accept(prefix("icon/phiflower"));
 		consumer.accept(prefix("icon/nerfbat"));

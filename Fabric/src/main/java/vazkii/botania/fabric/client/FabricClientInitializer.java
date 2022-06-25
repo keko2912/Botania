@@ -55,10 +55,8 @@ import vazkii.botania.common.block.tile.*;
 import vazkii.botania.common.item.ModItems;
 import vazkii.botania.common.item.equipment.armor.manasteel.ItemManasteelArmor;
 import vazkii.botania.common.lib.LibMisc;
-import vazkii.botania.common.world.WorldTypeSkyblock;
 import vazkii.botania.fabric.network.FabricPacketHandler;
 import vazkii.botania.mixin.client.AccessorRenderBuffers;
-import vazkii.botania.xplat.IXplatAbstractions;
 import vazkii.patchouli.api.BookDrawScreenCallback;
 
 import java.util.SortedMap;
@@ -111,9 +109,11 @@ public class FabricClientInitializer implements ClientModInitializer {
 		ClientProxy.initSeasonal();
 		ClientProxy.initKeybindings(KeyBindingHelper::registerKeyBinding);
 
+		/* todo 1.19 probably a json now
 		if (IXplatAbstractions.INSTANCE.gogLoaded()) {
 			AccessorWorldPreset.getAllTypes().add(WorldTypeSkyblock.INSTANCE);
 		}
+		*/
 
 		registerArmors();
 		registerCapabilities();

@@ -32,8 +32,6 @@ import vazkii.botania.common.block.tile.mana.TilePump;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import java.util.Random;
-
 public class BlockPump extends BlockModWaterloggable implements EntityBlock {
 
 	private static final VoxelShape X_SHAPE = box(0, 0, 4, 16, 8, 12);

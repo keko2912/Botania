@@ -29,8 +29,6 @@ import vazkii.botania.common.helper.ColorHelper;
 
 import javax.annotation.Nonnull;
 
-import java.util.Random;
-
 public class BlockBuriedPetals extends BushBlock implements BonemealableBlock {
 
 	private static final VoxelShape SHAPE = box(0, 0, 0, 16, 1.6, 16);

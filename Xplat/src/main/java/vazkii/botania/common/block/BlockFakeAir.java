@@ -23,8 +23,6 @@ import vazkii.botania.common.block.tile.TileFakeAir;
 
 import javax.annotation.Nonnull;
 
-import java.util.Random;
-
 public class BlockFakeAir extends AirBlock implements EntityBlock {
 
 	public BlockFakeAir(Properties builder) {

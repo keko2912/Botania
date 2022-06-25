@@ -19,8 +19,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import vazkii.botania.common.block.tile.ModTiles;
 
-import java.util.Random;
-
 public class TileRedStringFertilizer extends TileRedString {
 	public TileRedStringFertilizer(BlockPos pos, BlockState state) {
 		super(ModTiles.RED_STRING_FERTILIZER, pos, state);

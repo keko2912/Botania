@@ -237,6 +237,7 @@ public class ModTags {
 		public static final TagKey<Biome> MARIMORPHOSIS_PLAINS_BONUS = tag("marimorphosis_plains_bonus");
 		public static final TagKey<Biome> MARIMORPHOSIS_SWAMP_BONUS = tag("marimorphosis_swamp_bonus");
 		public static final TagKey<Biome> MARIMORPHOSIS_TAIGA_BONUS = tag("marimorphosis_taiga_bonus");
+
 		private static TagKey<Biome> tag(String name) {
 			return TagKey.create(Registry.BIOME_REGISTRY, prefix(name));
 		}

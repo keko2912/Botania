@@ -22,8 +22,6 @@ import vazkii.botania.xplat.BotaniaConfig;
 
 import javax.annotation.Nonnull;
 
-import java.util.Random;
-
 public class BlockModDoubleFlower extends TallFlowerBlock {
 	public final DyeColor color;
 

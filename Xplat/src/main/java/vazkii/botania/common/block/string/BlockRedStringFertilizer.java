@@ -29,8 +29,6 @@ import vazkii.botania.common.block.tile.string.TileRedStringFertilizer;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import java.util.Random;
-
 public class BlockRedStringFertilizer extends BlockRedString implements BonemealableBlock {
 
 	public BlockRedStringFertilizer(BlockBehaviour.Properties builder) {

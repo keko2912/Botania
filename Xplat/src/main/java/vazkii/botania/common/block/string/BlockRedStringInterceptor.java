@@ -34,8 +34,6 @@ import vazkii.botania.common.block.tile.string.TileRedStringInterceptor;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import java.util.Random;
-
 public class BlockRedStringInterceptor extends BlockRedString {
 
 	public BlockRedStringInterceptor(BlockBehaviour.Properties builder) {

@@ -23,8 +23,6 @@ import vazkii.botania.common.block.ModBlocks;
 
 import javax.annotation.Nonnull;
 
-import java.util.Random;
-
 public class MysticalFlowerFeature extends Feature<MysticalFlowerConfig> {
 	public MysticalFlowerFeature() {
 		super(MysticalFlowerConfig.CODEC);

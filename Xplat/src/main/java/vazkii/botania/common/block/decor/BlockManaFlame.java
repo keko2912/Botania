@@ -33,8 +33,6 @@ import vazkii.botania.xplat.IXplatAbstractions;
 
 import javax.annotation.Nonnull;
 
-import java.util.Random;
-
 public class BlockManaFlame extends BlockModWaterloggable implements EntityBlock {
 
 	private static final VoxelShape SHAPE = box(4, 4, 4, 12, 12, 12);

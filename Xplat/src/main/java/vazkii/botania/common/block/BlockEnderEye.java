@@ -29,8 +29,6 @@ import vazkii.botania.common.block.tile.TileEnderEye;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import java.util.Random;
-
 public class BlockEnderEye extends BlockMod implements EntityBlock {
 
 	protected BlockEnderEye(Properties builder) {

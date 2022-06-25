@@ -8,7 +8,6 @@
  */
 package vazkii.botania.common.block;
 
-import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -41,8 +40,6 @@ import vazkii.botania.common.item.ItemTwigWand;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-
-import java.util.Random;
 
 public class BlockHourglass extends BlockModWaterloggable implements EntityBlock {
 
