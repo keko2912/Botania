@@ -1,21 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "RSR",
-    "SCS",
-    "RSR"
-  ],
   "key": {
-    "R": {
-      "item": "minecraft:redstone"
-    },
     "C": {
       "item": "minecraft:comparator"
+    },
+    "R": {
+      "item": "minecraft:redstone"
     },
     "S": {
       "item": "botania:livingrock"
     }
   },
+  "pattern": [
+    "RSR",
+    "SCS",
+    "RSR"
+  ],
   "result": {
     "item": "botania:mana_detector"
   }
