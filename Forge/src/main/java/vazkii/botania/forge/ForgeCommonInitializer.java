@@ -528,9 +528,8 @@ public class ForgeCommonInitializer {
 		}
 	}
 
-	@SuppressWarnings("removal") // todo 1.19 remove
 	private void registerBlockLookasides() {
-		CapabilityUtil.registerBlockLookaside(BotaniaForgeCapabilities.HORN_HARVEST, (w, p, s) -> (world, pos, stack, hornType) -> hornType == IHornHarvestable.EnumHornType.CANOPY,
+		CapabilityUtil.registerBlockLookaside(BotaniaForgeCapabilities.HORN_HARVEST, (w, p, s) -> (world, pos, stack, hornType, living) -> hornType == IHornHarvestable.EnumHornType.CANOPY,
 				Blocks.VINE, Blocks.CAVE_VINES, Blocks.CAVE_VINES_PLANT, Blocks.TWISTING_VINES,
 				Blocks.TWISTING_VINES_PLANT, Blocks.WEEPING_VINES, Blocks.WEEPING_VINES_PLANT);
 		CapabilityUtil.registerBlockLookaside(BotaniaForgeCapabilities.HORN_HARVEST, (w, p, s) -> DefaultHornHarvestable.INSTANCE,
