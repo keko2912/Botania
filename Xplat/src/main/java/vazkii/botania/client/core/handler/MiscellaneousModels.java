@@ -103,14 +103,6 @@ public class MiscellaneousModels {
 		materials.addAll(Arrays.asList(sparkUpgradeIcons));
 		materials.add(RenderLexicon.TEXTURE);
 		materials.add(RenderLexicon.ELVEN_TEXTURE);
-		/* TODO 1.19 check if this is still needed
-		for (BannerPattern pattern : BannerPattern.values()) {
-			if (pattern.getFilename().startsWith(LibMisc.MOD_ID)) {
-				materials.add(new Material(Sheets.SHIELD_SHEET, pattern.location(false)));
-				materials.add(new Material(Sheets.BANNER_SHEET, pattern.location(true)));
-			}
-		}
-		*/
 		consumer.accept(prefix("icon/goldfish"));
 		consumer.accept(prefix("icon/phiflower"));
 		consumer.accept(prefix("icon/nerfbat"));

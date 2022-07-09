@@ -39,6 +39,8 @@
     "MixinFarmBlock",
     "MixinItem",
     "MixinItemEntity",
+    "MixinLoomMenu",
+    "MixinLoomMenuPatternSlot",
     "MixinLootTable",
     "MixinNaturalSpawner",
     "MixinPlayer",

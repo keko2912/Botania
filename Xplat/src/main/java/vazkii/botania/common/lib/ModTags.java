@@ -15,6 +15,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BannerPattern;
 
 import static vazkii.botania.common.lib.ResourceLocationHelper.prefix;
 
@@ -240,6 +241,22 @@ public class ModTags {
 
 		private static TagKey<Biome> tag(String name) {
 			return TagKey.create(Registry.BIOME_REGISTRY, prefix(name));
+		}
+	}
+
+	public static class BannerPatterns {
+		public static final TagKey<BannerPattern> PATTERN_ITEM_LIVINGWOOD_TWIG = tag("pattern_item/livingwood_twig");
+		public static final TagKey<BannerPattern> PATTERN_ITEM_LEXICON = tag("pattern_item/lexicon");
+		public static final TagKey<BannerPattern> PATTERN_ITEM_TERRASTEEL = tag("pattern_item/terrasteel");
+		public static final TagKey<BannerPattern> PATTERN_ITEM_DREAMWOOD_TWIG = tag("pattern_item/dreamwood_twig");
+		public static final TagKey<BannerPattern> PATTERN_ITEM_TINY_POTATO = tag("pattern_item/tiny_potato");
+		public static final TagKey<BannerPattern> PATTERN_ITEM_SPARK_DISPERSIVE = tag("pattern_item/spark_dispersive");
+		public static final TagKey<BannerPattern> PATTERN_ITEM_SPARK_DOMINANT = tag("pattern_item/spark_dominant");
+		public static final TagKey<BannerPattern> PATTERN_ITEM_SPARK_RECESSIVE = tag("pattern_item/spark_recessive");
+		public static final TagKey<BannerPattern> PATTERN_ITEM_SPARK_ISOLATED = tag("pattern_item/spark_isolated");
+
+		private static TagKey<BannerPattern> tag(String name) {
+			return TagKey.create(Registry.BANNER_PATTERN_REGISTRY, prefix(name));
 		}
 	}
 }

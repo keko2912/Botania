@@ -13,6 +13,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -23,22 +24,24 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BannerPattern;
 import net.minecraft.world.phys.BlockHitResult;
 
 import vazkii.botania.common.advancements.UseItemSuccessTrigger;
 import vazkii.botania.common.handler.ModSounds;
+import vazkii.botania.common.lib.ModTags;
 import vazkii.patchouli.api.PatchouliAPI;
 
 import javax.annotation.Nonnull;
 
 import java.util.List;
 
-public class ItemLexicon extends ItemModPattern {
+public class ItemLexicon extends Item implements ItemWithBannerPattern {
 
 	public static final String TAG_ELVEN_UNLOCK = "botania:elven_unlock";
 
 	public ItemLexicon(Properties settings) {
-		super(/*ModPatterns.LEXICON, */settings);
+		super(settings);
 	}
 
 	public static boolean isOpen() {
@@ -100,5 +103,10 @@ public class ItemLexicon extends ItemModPattern {
 	// Random item to expose this as public
 	public static BlockHitResult doRayTrace(Level world, Player player, ClipContext.Fluid fluidMode) {
 		return Item.getPlayerPOVHitResult(world, player, fluidMode);
+	}
+
+	@Override
+	public TagKey<BannerPattern> getBannerPattern() {
+		return ModTags.BannerPatterns.PATTERN_ITEM_LEXICON;
 	}
 }
