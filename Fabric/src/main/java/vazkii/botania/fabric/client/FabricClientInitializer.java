@@ -57,6 +57,7 @@ import vazkii.botania.common.item.equipment.armor.manasteel.ItemManasteelArmor;
 import vazkii.botania.common.lib.LibMisc;
 import vazkii.botania.fabric.network.FabricPacketHandler;
 import vazkii.botania.mixin.client.AccessorRenderBuffers;
+import vazkii.botania.xplat.IXplatAbstractions;
 import vazkii.patchouli.api.BookDrawScreenCallback;
 
 import java.util.SortedMap;
