@@ -184,7 +184,8 @@ public class FabricCommonInitializer implements ModInitializer {
 		// Rest
 		ModCriteriaTriggers.init();
 		ModParticles.registerParticles(bind(Registry.PARTICLE_TYPE));
-		ModLootModifiers.init();
+		ModLootModifiers.submitLootConditions(bind(Registry.LOOT_CONDITION_TYPE));
+		ModLootModifiers.submitLootFunctions(bind(Registry.LOOT_FUNCTION_TYPE));
 		ModStats.init();
 	}
 

@@ -110,12 +110,6 @@ public class FabricClientInitializer implements ClientModInitializer {
 		ClientProxy.initSeasonal();
 		ClientProxy.initKeybindings(KeyBindingHelper::registerKeyBinding);
 
-		/* todo 1.19 probably a json now
-		if (IXplatAbstractions.INSTANCE.gogLoaded()) {
-			AccessorWorldPreset.getAllTypes().add(WorldTypeSkyblock.INSTANCE);
-		}
-		*/
-
 		registerArmors();
 		registerCapabilities();
 

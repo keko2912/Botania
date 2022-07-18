@@ -188,7 +188,7 @@ public class EntityPoolMinecart extends AbstractMinecart {
 	}
 
 	@Override
-	protected Item getDropItem() {
+	public Item getDropItem() {
 		return ModItems.poolMinecart;
 	}
 

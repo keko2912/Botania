@@ -26,6 +26,8 @@ import vazkii.botania.common.block.tile.ModTiles;
 import vazkii.botania.common.helper.MathHelper;
 import vazkii.botania.xplat.IXplatAbstractions;
 
+import javax.annotation.Nullable;
+
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -378,8 +380,8 @@ public class TileCorporeaIndex extends TileCorporeaBase implements ICorporeaRequ
 	}
 
 	public static final class InputHandler {
-		public boolean onChatMessage(ServerPlayer player, String message) {
-			if (player.isSpectator()) {
+		public boolean onChatMessage(@Nullable ServerPlayer player, String message) {
+			if (player == null || player.isSpectator()) {
 				return false;
 			}
 

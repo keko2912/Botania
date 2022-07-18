@@ -52,13 +52,13 @@ public class ModRecipeTypes {
 	public static final RecipeType<ITerraPlateRecipe> TERRA_PLATE_TYPE = new ModRecipeType<>();
 	public static final RecipeSerializer<RecipeTerraPlate> TERRA_PLATE_SERIALIZER = new RecipeTerraPlate.Serializer();
 
-	public static final RecipeType<IOrechidRecipe> ORECHID_TYPE = new ModRecipeType<>();
+	public static final RecipeType<RecipeOrechid> ORECHID_TYPE = new ModRecipeType<>();
 	public static final RecipeSerializer<RecipeOrechid> ORECHID_SERIALIZER = new RecipeOrechid.Serializer();
 
-	public static final RecipeType<IOrechidRecipe> ORECHID_IGNEM_TYPE = new ModRecipeType<>();
+	public static final RecipeType<RecipeOrechidIgnem> ORECHID_IGNEM_TYPE = new ModRecipeType<>();
 	public static final RecipeSerializer<RecipeOrechidIgnem> ORECHID_IGNEM_SERIALIZER = new RecipeOrechidIgnem.Serializer();
 
-	public static final RecipeType<IOrechidRecipe> MARIMORPHOSIS_TYPE = new ModRecipeType<>();
+	public static final RecipeType<RecipeMarimorphosis> MARIMORPHOSIS_TYPE = new ModRecipeType<>();
 	public static final RecipeSerializer<RecipeMarimorphosis> MARIMORPHOSIS_SERIALIZER = new RecipeMarimorphosis.Serializer();
 
 	public static void registerRecipeTypes(BiConsumer<RecipeSerializer<?>, ResourceLocation> r) {
