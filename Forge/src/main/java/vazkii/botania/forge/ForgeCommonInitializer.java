@@ -184,7 +184,8 @@ public class ForgeCommonInitializer {
 		// GUI and Recipe
 		bind(Registry.MENU_REGISTRY, ModItems::registerMenuTypes);
 		bind(Registry.RECIPE_SERIALIZER_REGISTRY, ModItems::registerRecipeSerializers);
-		bind(Registry.RECIPE_SERIALIZER_REGISTRY, ModRecipeTypes::registerRecipeTypes);
+		bind(Registry.RECIPE_TYPE_REGISTRY, ModRecipeTypes::submitRecipeTypes);
+		bind(Registry.RECIPE_SERIALIZER_REGISTRY, ModRecipeTypes::submitRecipeSerializers);
 
 		// Entities
 		bind(Registry.ENTITY_TYPE_REGISTRY, ModEntities::registerEntities);
@@ -195,8 +196,10 @@ public class ForgeCommonInitializer {
 		bind(Registry.ATTRIBUTE_REGISTRY, PixieHandler::registerAttribute);
 
 		// Potions
-		bind(Registry.MOB_EFFECT_REGISTRY, ModPotions::registerPotions);
-		ModBrews.registerBrews();
+		bind(Registry.MOB_EFFECT_REGISTRY, (consumer) -> {
+			ModPotions.registerPotions(consumer);
+			ModBrews.registerBrews();
+		});
 
 		// Worldgen
 		bind(Registry.FEATURE_REGISTRY, ModFeatures::registerFeatures);

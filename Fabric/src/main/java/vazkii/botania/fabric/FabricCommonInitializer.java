@@ -151,7 +151,8 @@ public class FabricCommonInitializer implements ModInitializer {
 		ModItems.registerMenuTypes(bind(Registry.MENU));
 		ModItems.registerRecipeSerializers(bind(Registry.RECIPE_SERIALIZER));
 		ModPatterns.submitRegistrations(bind(Registry.BANNER_PATTERN));
-		ModRecipeTypes.registerRecipeTypes(bind(Registry.RECIPE_SERIALIZER));
+		ModRecipeTypes.submitRecipeTypes(bind(Registry.RECIPE_TYPE));
+		ModRecipeTypes.submitRecipeSerializers(bind(Registry.RECIPE_SERIALIZER));
 
 		// Entities
 		ModEntities.registerEntities(bind(Registry.ENTITY_TYPE));
